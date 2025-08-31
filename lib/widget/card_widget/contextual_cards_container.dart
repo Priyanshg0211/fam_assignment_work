@@ -1,10 +1,12 @@
 
+import 'package:fam_assignment_work/models/card_models.dart';
 import 'package:fam_assignment_work/provider/cards_provider.dart';
 import 'package:fam_assignment_work/widget/card_widget/hc1_widget.dart';
 import 'package:fam_assignment_work/widget/card_widget/hc3_widget.dart';
 import 'package:fam_assignment_work/widget/card_widget/hc5_widget.dart';
 import 'package:fam_assignment_work/widget/card_widget/hc6_widget.dart';
 import 'package:fam_assignment_work/widget/card_widget/hc9_widget.dart';
+import 'package:fam_assignment_work/widget/common/shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

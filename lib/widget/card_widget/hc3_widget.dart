@@ -1,5 +1,6 @@
 // lib/widgets/card_widgets/hc3_widget.dart
-import 'package:fam_assignment/provider/cards_provider.dart';
+import 'package:fam_assignment_work/provider/cards_provider.dart';
+import 'package:fam_assignment_work/service/url_launcher_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../models/card_models.dart';
@@ -7,7 +8,6 @@ import '../common/formatted_text_widget.dart';
 import '../common/card_image_widget.dart';
 import '../common/gradient_container.dart';
 import '../common/card_tap_handler.dart';
-import '../../services/url_launcher_service.dart';
 
 class HC3Widget extends StatefulWidget {
   final CardGroup group;
