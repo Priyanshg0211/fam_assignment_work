@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/card_models.dart';
 import '../common/card_image_widget.dart';
 import '../common/card_tap_handler.dart';
+import '../common/color_utils.dart';
 import '../common/formatted_text_widget.dart';
 
 class HC5Widget extends StatelessWidget {
@@ -27,12 +28,10 @@ class HC5Widget extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            color: card.bgColor != null 
-                ? Color(int.parse(card.bgColor!.replaceFirst('#', '0xFF')))
-                : const Color(0xFFF8D848), // Default yellow color
+            color: ColorUtils.parseHexColorWithDefault(card.bgColor, const Color(0xFFF8D848)), // Default yellow color
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withValues(alpha: 0.08),
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),
@@ -69,7 +68,7 @@ class HC5Widget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
                                 ),

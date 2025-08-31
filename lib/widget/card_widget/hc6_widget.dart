@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/card_models.dart';
 import '../common/card_image_widget.dart';
 import '../common/card_tap_handler.dart';
+import '../common/color_utils.dart';
 
 class HC6Widget extends StatelessWidget {
   final CardGroup group;
@@ -37,9 +38,7 @@ class HC6Widget extends StatelessWidget {
           width: card.isFullWidth ? double.infinity : null,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // Reduced vertical padding
           decoration: BoxDecoration(
-            color: card.bgColor != null 
-                ? Color(int.parse(card.bgColor!.replaceFirst('#', '0xFF'))) 
-                : Colors.white,
+            color: ColorUtils.parseHexColorWithDefault(card.bgColor, Colors.white),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: Colors.grey.shade300, 
@@ -47,7 +46,7 @@ class HC6Widget extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.04),
+                color: Colors.black.withValues(alpha: 0.04),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),

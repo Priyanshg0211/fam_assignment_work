@@ -60,8 +60,26 @@ class CardImageWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      color: Colors.grey[200],
-      child: const Icon(Icons.image, color: Colors.grey),
+      decoration: BoxDecoration(
+        color: Colors.grey[200],
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.grey[300]!, width: 1),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.broken_image, color: Colors.grey[400], size: 24),
+          const SizedBox(height: 4),
+          Text(
+            'Image Error',
+            style: TextStyle(
+              color: Colors.grey[600],
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

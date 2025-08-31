@@ -4,6 +4,7 @@ import '../../models/card_models.dart';
 import '../common/card_image_widget.dart';
 import '../common/gradient_container.dart';
 import '../common/card_tap_handler.dart';
+import '../common/color_utils.dart';
 import '../common/formatted_text_widget.dart';
 
 class HC9Widget extends StatelessWidget {
@@ -47,7 +48,7 @@ class HC9Widget extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.12),
+              color: Colors.black.withValues(alpha: 0.12),
               blurRadius: 16,
               offset: const Offset(0, 6),
             ),
@@ -59,9 +60,7 @@ class HC9Widget extends StatelessWidget {
             children: [
               // Background color
               Container(
-                color: card.bgColor != null
-                    ? Color(int.parse(card.bgColor!.replaceFirst('#', '0xFF')))
-                    : const Color(0xFF6C5CE7), // Default purple
+                color: ColorUtils.parseHexColorWithDefault(card.bgColor, const Color(0xFF6C5CE7)), // Default purple
               ),
               
               // Background image
@@ -93,7 +92,7 @@ class HC9Widget extends StatelessWidget {
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.4),
+                        Colors.black.withValues(alpha: 0.4),
                       ],
                     ),
                   ),
@@ -108,11 +107,11 @@ class HC9Widget extends StatelessWidget {
                           width: 32,
                           height: 32,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             borderRadius: BorderRadius.circular(8),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
+                                color: Colors.black.withValues(alpha: 0.1),
                                 blurRadius: 4,
                                 offset: const Offset(0, 2),
                               ),

@@ -41,7 +41,7 @@ class ContextualCardsContainer extends StatelessWidget {
       color: Colors.blue,
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.8,
           child: Center(
             child: Column(
@@ -92,7 +92,7 @@ class ContextualCardsContainer extends StatelessWidget {
       color: Colors.blue,
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.8,
           child: Center(
             child: Column(
@@ -117,7 +117,7 @@ class ContextualCardsContainer extends StatelessWidget {
                   'Check back later for new content',
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.grey[500],
+                    color: Colors.grey[700],
                   ),
                 ),
               ],

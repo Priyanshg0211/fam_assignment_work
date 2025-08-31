@@ -1,4 +1,5 @@
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/foundation.dart';
 
 class UrlLauncherService {
   static Future<void> launchURL(String url) async {
@@ -11,7 +12,7 @@ class UrlLauncherService {
       }
     } catch (e) {
       // Handle error silently or show a snackbar
-      print('Error launching URL: $e');
+      debugPrint('Error launching URL: $e');
     }
   }
 }

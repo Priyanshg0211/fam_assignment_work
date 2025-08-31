@@ -4,6 +4,7 @@ import '../../models/card_models.dart';
 import '../common/formatted_text_widget.dart';
 import '../common/card_image_widget.dart';
 import '../common/card_tap_handler.dart';
+import '../common/color_utils.dart';
 
 class HC1Widget extends StatelessWidget {
   final CardGroup group;
@@ -57,9 +58,7 @@ class HC1Widget extends StatelessWidget {
 
   Widget _buildCard(ContextualCard card) {
     // Use the background color from JSON, default to #FBAF03 if not specified
-    Color backgroundColor = card.bgColor != null 
-        ? Color(int.parse(card.bgColor!.replaceFirst('#', '0xFF')))
-        : const Color(0xFFFBAF03);
+    Color backgroundColor = ColorUtils.parseHexColorWithDefault(card.bgColor, const Color(0xFFFBAF03));
 
     // Check if card has URL to determine if arrow should be shown
     bool hasUrl = card.url != null && card.url!.isNotEmpty;
@@ -76,7 +75,7 @@ class HC1Widget extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.08),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -90,7 +89,7 @@ class HC1Widget extends StatelessWidget {
                 width: 36,
                 height: 36,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.white.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: ClipRRect(
@@ -132,7 +131,7 @@ class HC1Widget extends StatelessWidget {
                       child: FormattedTextWidget(
                         formattedText: card.formattedDescription!,
                         maxLines: 1,
-                        defaultColor: Colors.black.withOpacity(0.7),
+                        defaultColor: Colors.black.withValues(alpha: 0.7),
                       ),
                     ),
                 ],
@@ -147,7 +146,7 @@ class HC1Widget extends StatelessWidget {
                   width: 20,
                   height: 20,
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Icon(

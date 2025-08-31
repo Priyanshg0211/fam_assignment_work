@@ -214,7 +214,11 @@ class FormattedTextWidget extends StatelessWidget {
   FontWeight _getFontWeight(String fontFamily) {
     String lowerFamily = fontFamily.toLowerCase();
     if (lowerFamily.contains('bold') || lowerFamily.contains('semi_bold')) {
-      return FontWeight.w600;
+      return FontWeight.w700;
+    } else if (lowerFamily.contains('regular')) {
+      return FontWeight.w400;
+    } else if (lowerFamily.contains('medium')) {
+      return FontWeight.w500;
     }
     return FontWeight.w400;
   }

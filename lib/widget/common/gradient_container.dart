@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import '../../models/card_models.dart' as models;
+import 'color_utils.dart';
 
 class GradientContainer extends StatelessWidget {
   final models.Gradient gradient;
@@ -19,7 +20,7 @@ class GradientContainer extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: gradient.colors
-              .map((color) => Color(int.parse(color.replaceFirst('#', '0xFF'))))
+              .map((color) => ColorUtils.parseHexColor(color))
               .toList(),
           begin: _getAlignmentFromAngle(gradient.angle),
           end: _getAlignmentFromAngle(gradient.angle + 180),
@@ -36,4 +37,5 @@ class GradientContainer extends StatelessWidget {
       math.sin(radians),
     );
   }
+
 }

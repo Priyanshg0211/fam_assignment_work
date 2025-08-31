@@ -8,6 +8,7 @@ import '../common/formatted_text_widget.dart';
 import '../common/card_image_widget.dart';
 import '../common/gradient_container.dart';
 import '../common/card_tap_handler.dart';
+import '../common/color_utils.dart';
 
 class HC3Widget extends StatefulWidget {
   final CardGroup group;
@@ -127,12 +128,10 @@ class _HC3WidgetState extends State<HC3Widget>
       height: cardHeight,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: card.bgColor != null
-            ? Color(int.parse(card.bgColor!.replaceFirst('#', '0xFF')))
-            : Colors.blue,
+        color: ColorUtils.parseHexColorWithDefault(card.bgColor, Colors.blue),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -179,7 +178,7 @@ class _HC3WidgetState extends State<HC3Widget>
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             padding: const EdgeInsets.all(12),
@@ -249,8 +248,8 @@ class _HC3WidgetState extends State<HC3Widget>
                       onPressed: () =>
                           UrlLauncherService.launchURL(cta.url ?? ''),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF000000),
-                        foregroundColor: Colors.white,
+                        backgroundColor: ColorUtils.parseHexColorWithDefault(cta.bgColor, const Color(0xFF000000)),
+                        foregroundColor: ColorUtils.parseHexColorWithDefault(cta.textColor, Colors.white),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
