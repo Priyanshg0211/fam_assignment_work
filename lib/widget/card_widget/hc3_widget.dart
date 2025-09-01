@@ -65,7 +65,7 @@ class _HC3WidgetState extends State<HC3Widget>
     if (widget.group.cards.isEmpty) return const SizedBox.shrink();
 
     final card = widget.group.cards.first;
-    final cardHeight = 350.0;
+    final cardHeight = 450.0;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
