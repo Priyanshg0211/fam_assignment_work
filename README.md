@@ -137,27 +137,13 @@ lib/
 | Code structure | ✅ | Clean, modular architecture |
 | Design matching | ✅ | Follows Figma specifications |
 
-## 🧪 Testing
+## 🎥 Demo Recording
 
-The app handles various API response scenarios:
-- Different text lengths and formatting
-- Various color schemes and gradients
-- Multiple image types and sizes
-- Different scroll behaviors
-- Edge cases with missing data
+### App Demo Video
+- **Demo Recording**: [Watch Demo Video](https://drive.google.com/drive/folders/1vFmp_zszK58ariuv5kPZtxPbIYC6TuSq?usp=sharing) 
 
-## 📝 Notes
-
-- The FamPay logo is part of the screen, not the container
-- All card properties are dynamically loaded from API
-- No hardcoded values - everything is configurable
-- Responsive design handles different screen sizes
-- Proper error boundaries and fallbacks implemented
 
 ## 🤝 Contributing
 
 This is an assignment submission for FamPay. The code is structured for easy understanding and modification.
 
-## 📄 License
-
-This project is created for educational purposes as part of the FamPay Flutter developer assignment.
